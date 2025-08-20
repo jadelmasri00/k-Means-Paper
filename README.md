@@ -9,7 +9,7 @@ Pack and Select reframes K-selection with a simple graph-based idea:
 
 Build a distance view of the data and set an adaptive distance threshold d from the data itself.
 
-Find a minimal d-packing—a set of points that are all at least d apart.
+Find a minimal d-packing; a set of points that are all at least d apart.
 
 Use the size of that packing as a strong estimate for K.
 
