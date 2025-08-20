@@ -1,23 +1,23 @@
-# An Improved K-Selection Method for K-Means Clustering
+Pack and Select: An Effective K-Selection Method for K-Means Clustering
 
-This repository hosts my research paper:
+This repository contains my research paper, “Pack and Select: An Effective K-Selection Method for K-Means Clustering.”
+The PDF is included as Pack_and_Select.pdf.
 
-📄 *An Improved K-Selection Method for K-Means Clustering*  
-The PDF can be found directly in this repository.
+What this work is about
 
----
+Choosing the right number of clusters K is a persistent challenge in K-means. Common heuristics (e.g., elbow or index-based rules) can be sensitive to dataset shape, density, and overlap.
 
-## Overview
-Determining the correct number of clusters is a long-standing challenge in K-means clustering.  
-Traditional methods such as the **Elbow method**, **Bayesian Information Criterion (BIC)**, **Calinski-Harabasz**, and **Xie-Beni** often fail on complex datasets.
+Pack and Select reframes K-selection with a simple graph-based idea:
 
-This work introduces **d-packing**, a dynamic distance–based selection method that:  
-- Consistently identifies the true number of clusters across **dense, sparse, overlapping, and non-overlapping** datasets.  
-- Outperforms conventional approaches in both **accuracy** and **robustness**.  
-- Provides a more **generalizable framework** for clustering problems.
+Build a distance view of the data and set an adaptive distance threshold d from the data itself.
 
----
+Find a minimal d-packing—a set of points that are all at least d apart.
 
-## Code Availability
-The implementation and experiments are currently **private** while the paper is under review.  
-They will be released in this repository after the review process.
+Use the size of that packing as a strong estimate for K.
+
+Intuitively, the packing picks well-separated “representatives.” Their count provides a stable, data-aware estimate of how many clusters are present. The procedure is lightweight and fits naturally alongside K-means initialization or model selection workflows.
+
+Code availability
+
+The implementation and experiment scripts are private while the paper is under review for publication. 
+
